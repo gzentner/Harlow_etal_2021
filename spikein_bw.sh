@@ -4,7 +4,7 @@
 
 for i in *sorted.bam
 do 
-	# Calculate spike-in normalization factor
+    # Calculate spike-in normalization factor
     NREADS=$(samtools idxstats $i | grep "ERCC" | awk '{s+=$3} END {print s}') # Count number of reads mapping to ERCC transcripts
     SCALE_NUMERATOR=100000 
     SPIKE=$( echo "scale=5 ; $SCALE_NUMERATOR / $NREADS" | bc )
@@ -22,8 +22,8 @@ do
 
 
     ## Forward
-	bamCoverage -b $i -of bigwig --filterRNAstrand forward -bs 25 --scaleFactor $SPIKE -p 8 -e -o ${i/.bam/.forward.bw}
+    bamCoverage -b $i -of bigwig --filterRNAstrand forward -bs 25 --scaleFactor $SPIKE -p 8 -e -o ${i/.bam/.forward.bw}
 
-	## Reverse 
-	bamCoverage -b $i -of bigwig --filterRNAstrand reverse -bs 25 --scaleFactor $SPIKE -p 8 -e -o ${i/.bam/.reverse.bw}
+    ## Reverse 
+    bamCoverage -b $i -of bigwig --filterRNAstrand reverse -bs 25 --scaleFactor $SPIKE -p 8 -e -o ${i/.bam/.reverse.bw}
 done
