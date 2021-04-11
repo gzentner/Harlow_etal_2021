@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script requires that Samtools and deepTools be in your path.
+# This script requires that SAMtools and deepTools be in your path.
 
 for i in *sorted.bam
 do 
