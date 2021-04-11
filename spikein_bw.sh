@@ -20,7 +20,6 @@ do
     ## only work for paired-end data (by default -e extends paired-end reads to the length of the fragment from which they 
     ## were derived).
 
-
     ## Forward
     bamCoverage -b $i -of bigwig --filterRNAstrand forward -bs 25 --scaleFactor $SPIKE -p 8 -e -o ${i/.bam/.forward.bw}
 
