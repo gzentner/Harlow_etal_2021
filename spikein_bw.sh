@@ -15,8 +15,8 @@ do
     
     # Generate bigWigs
     ## Note that the below strand filtering is for negatively-stranded libraries (e.g., dUTP RNA-seq, 3' QuantSeq REV). For 
-    ## forward-stranded libraries (e.g., Lexogen CORALL), the reverse strand should filtered to generate a the forward strand 
-    ## coverage and vice versa. For generating single-end converage tracks, -e 200 should be specific. As written, this will 
+    ## forward-stranded libraries (e.g., Lexogen CORALL, 3' QuantSeq FWD), the reverse strand should filtered to determine forward 
+    ## strand coverage and vice versa. For generating single-end converage tracks, -e 200 should be specified. As written, this will 
     ## only work for paired-end data (by default -e extends paired-end reads to the length of the fragment from which they 
     ## were derived).
 
